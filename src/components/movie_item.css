@@ -1,0 +1,15 @@
+.movie_item_data {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid darkgray;
+    width: 80%;
+    margin: 10px auto;
+    padding: 8px 20px;
+    font-size: 12px;
+    background-color: #EBEBEB;
+}
+
+.movie_item_data img{
+    height: 150px;
+    margin:10px 10px 10px 0;
+}
