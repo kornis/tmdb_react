@@ -16,8 +16,15 @@ function Header(){
                     <li>Login</li>
                     <img src='/search-solid.svg' alt='search' />
                 </ul>
-            </div>
+            </div> 
         </header>
+        <div className='subMenu'>
+                <ul>
+                    <li>Vista General</li>
+                    <li>Multimedia</li>
+                    <li>Fandome</li>
+                </ul>
+            </div>
         </>
     )
 };

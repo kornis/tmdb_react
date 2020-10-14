@@ -48,3 +48,19 @@ header ul li{
 header ul li:hover{
   cursor: pointer;
 }
+
+.subMenu{
+  background-color: #FCFCFC;
+}
+
+.subMenu ul{
+    display: flex;
+    justify-content: space-around;
+    padding: 14px 0;
+    margin: 0;
+}
+
+.subMenu ul li{
+  list-style-type: none;
+}
+

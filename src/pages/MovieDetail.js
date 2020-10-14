@@ -1,11 +1,12 @@
 import React from 'react';
 import MovieDetail from '../components/MovieDetail';
-
+import Layout from '../components/Layout';
 
 class MovieDetailPage extends React.Component{
     state = {
         loading: true,
         movieData: null,
+        credits: null,
         error: null
     }
     componentDidMount(){
@@ -15,9 +16,12 @@ class MovieDetailPage extends React.Component{
     fetchMovieData = async () =>{
        const response = await fetch('https://api.themoviedb.org/3/movie/1374?api_key=a6f0d3082cd52617711adb2c75c57921&language=en-US');
        const data = await response.json();
+       const response2 = await fetch('https://api.themoviedb.org/3/movie/1374/credits?api_key=a6f0d3082cd52617711adb2c75c57921');
+       const credits = await response2.json();
        console.log(data);
        this.setState({
            movieData: data,
+           credits,
            loading: false
        });
     }
@@ -26,7 +30,9 @@ class MovieDetailPage extends React.Component{
             return "Loading..."
         }
     return(
-        <MovieDetail movieData={ this.state.movieData } />
+        <Layout>
+            <MovieDetail movieData={ this.state.movieData } credits={ this.state.credits } />
+        </Layout>
     )
     }
 }

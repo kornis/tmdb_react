@@ -1,3 +1,62 @@
-.container div#images img:nth-child(2){
-    width: 130px;
+*{
+    box-sizing: border-box;
+}
+
+.data_container{
+    background-color: #39272A;
+    color: white;
+}
+
+.data_container div#images img{
+    width: 110px;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.data_container #genre_div{
+    background-color: #312024;
+    padding: 18px 40px;
+    border: 1px solid #1f0f11;
+    color: white;
+    text-align: center;
+}
+
+.data_container #genre_div p{
+    margin: 0;
+}
+
+#images {
+	background-image: url(https://image.tmdb.org/t/p/original/uI9YwSYfO6CuXJCdYfUW0CPI7TU.jpg);
+	background: linear-gradient(to right, rgb(55, 37, 40) 20%, rgba(21.57%, 14.51%, 15.69%, 0.00) 50%),url(https://image.tmdb.org/t/p/original/uI9YwSYfO6CuXJCdYfUW0CPI7TU.jpg)aliceblue;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#info_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+#info_container p {
+	text-align: center;
+}
+
+#info_container p strong {
+	font-size: 20px;
+    margin-right: 6px;
+}
+
+#info_movie{
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+
+#starring_section{
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: black;
+    padding: 1px 15px
 }
