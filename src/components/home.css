@@ -1,0 +1,65 @@
+section.banner_home{
+    background-image: url('/bannerhome.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+section.banner_home article{
+    padding:8px 5px 35px 20px;
+}
+
+section.banner_home article h1{
+    font-size: 45px;
+    margin-bottom: 3px;
+}
+
+section.banner_home article p{
+    font-size: 28px;
+    margin-top: 0;
+}
+
+article div.home_search{
+    position: relative;
+}
+article div.home_search input{
+    width: 90%;
+    height: 45px;
+    border-radius: 25px;
+}
+article div.home_search button{
+    position: absolute;
+    height: 45px;
+    border-radius: 25px;
+    padding: 6px 25px;
+    background-color:#17cdb7;
+    color: white;
+    border:solid 1px #17cdb7;
+    right: 28px;
+}
+
+section article.join_now ul li {
+    font-size: 14px;
+    font-weight: lighter;
+    margin-bottom: 3px;
+    opacity: 0.8;
+}
+    section article.join_now {
+    background-image: url('/joinus.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 25px 15px 20px 20px;
+    color: white;
+    font-size: 20px;
+}
+
+article.join_now div button{
+    padding: 13px 20px;
+    background-color: #805be7;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+

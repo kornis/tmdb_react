@@ -19,14 +19,9 @@ class MoviesList extends React.Component{
     }
 
 render(){
-        if(this.state.loading){
-            return (
-                <h3>fetching data...</h3>
-            )
-        }
     return(
         <>
-                {this.state.movies.results.map(movie => {
+       {this.state.loading ? <h3>fetching data...</h3> : this.state.movies.results.map(movie => {
                 return <MovieItem key={movie.id} data={movie} />
             })}
         </>

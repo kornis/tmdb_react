@@ -1,11 +1,10 @@
 import React from 'react';
-import './movieDetail.css';
+
 import StarringCard from './StarringCard';
 
 function MovieDetail(props){
-        return(
+        return( 
             <>
-            
             <div className="data_container">
                 <div id='images'>
                     <img src={'https://image.tmdb.org/t/p/original' + props.movieData.poster_path} alt='' />

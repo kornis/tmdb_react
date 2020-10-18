@@ -7,10 +7,8 @@ function StarringCard(props){
         {props.credits.cast.map(char => {
            return (
                 (
-                <div className='card'>
-                
+                <div className='card' key={char.id}>
                     <img src={'https://image.tmdb.org/t/p/w138_and_h175_face' + char.profile_path} alt='' />
-             
                     <h5>{char.name}</h5>
                     <p>{char.character}</p>
                 

@@ -1,0 +1,41 @@
+section article.article_category{
+    padding:20px 0 20px 20px;
+} 
+
+section article div.category_article{
+    display: flex;
+    margin-top: 15px;
+    overflow-x: scroll;
+}
+
+
+section article div div.card_category{
+    width: 170px;
+    margin-right: 10px;
+    
+}
+
+section article div div.card_category:nth-last-child(){
+    margin-right: 0;
+}
+
+section article div div.card_category div img{
+    border-radius: 12px;
+    height: 225px;
+    width: 150px;
+    background-color: tomato;
+}
+
+section article div div.card_category div.card_cat_bottom{
+    padding: 5px 12px 20px 12px;
+    text-align: left;
+}
+
+section article div div.card_category div.card_cat_bottom h5{
+margin-bottom: 3px;
+}
+
+
+section article div div.card_category div.card_cat_bottom span{
+    font-size: 14px;
+}

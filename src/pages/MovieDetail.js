@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieDetail from '../components/MovieDetail';
-import Layout from '../components/Layout';
+import '../components/movieDetail.css';
 
 class MovieDetailPage extends React.Component{
     state = {
@@ -26,13 +26,8 @@ class MovieDetailPage extends React.Component{
        });
     }
     render(){
-        if(this.state.loading){
-            return "Loading..."
-        }
     return(
-        <Layout>
-            <MovieDetail movieData={ this.state.movieData } credits={ this.state.credits } />
-        </Layout>
+     this.state.loading ? <p>Loading...</p> : <MovieDetail movieData={ this.state.movieData } credits={ this.state.credits } /> 
     )
     }
 }
