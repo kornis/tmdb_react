@@ -2,10 +2,10 @@ import React from 'react';
 import MoviesList from '../components/MoviesList';
 
 
-function MoviesListPage() {
+function MoviesListPage(props) {
   return (
     <div className="App">
-        <MoviesList />
+        <MoviesList search={props.match.params.search}  />
     </div>
   );
 }

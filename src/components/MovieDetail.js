@@ -5,7 +5,7 @@ import StarringCard from './StarringCard';
 function MovieDetail(props){
         return( 
             <>
-            <div className="data_container">
+                <div className="data_container">
                 <div id='images'>
                     <img src={'https://image.tmdb.org/t/p/original' + props.movieData.poster_path} alt='' />
                 </div>

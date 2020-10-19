@@ -1,6 +1,7 @@
 import React from 'react';
 import '../components/home.css';
 import '../components/card_category.css';
+import { Redirect } from 'react-router-dom';
 import HomeCards from '../components/HomeCards';
 
 class Home extends React.Component{
@@ -12,7 +13,18 @@ class Home extends React.Component{
            },
         error: null,
         loading: true,
+        redirect: null,
+        search: null,
         }
+
+    handleInputSearch = (e) => {
+        e.preventDefault();
+        let search = e.target[0].value;
+        this.setState({
+            ...this.state,
+            redirect: '/movies-list/'+search 
+        })
+    }    
 
     fetchInfo = async () => {
         let response = await fetch(' https://api.themoviedb.org/3/movie/popular?api_key=a6f0d3082cd52617711adb2c75c57921&language=en-US&page=1');
@@ -23,16 +35,17 @@ class Home extends React.Component{
             },
             loading: false
         });
-        console.log("console 1")
         console.log(this.state.info.popular.results);
     }
 
     componentDidMount(){
        this.fetchInfo();
-       console.log("did mount")
-    }
+       }
 
 render(){
+    if(this.state.redirect){
+        return <Redirect to={this.state.redirect} />
+    }
     return(
         <>
         <section className="banner_home">
@@ -40,8 +53,10 @@ render(){
                 <h1>Bienvenidos.</h1>
                 <p><strong>Millones de películas, programas de televisión y personas por descubrir. Explora ahora.</strong></p>
                 <div className="home_search">
+                    <form onSubmit={ this.handleInputSearch }>
                     <input type="text" />
-                    <a href="/"><button><strong>Search</strong></button></a>
+                    <button><strong>Search</strong></button>
+                    </form>
                 </div>
             </article>
         </section>
@@ -71,7 +86,7 @@ render(){
             <div>
                 <h3>Únete hoy</h3>
                 <p>
-                Get access to maintain your own <span class="gray_text">custom personal lists</span>, <span class="gray_text">track what you've seen</span> and search and filter for <span class="gray_text">what to watch next</span>—regardless if it's in theatres, on TV or available on popular streaming services like QubitTV, Kocowa, DIRECTV GO y DOCSVILLE.
+                Get access to maintain your own <span className="gray_text">custom personal lists</span>, <span className="gray_text">track what you've seen</span> and search and filter for <span className="gray_text">what to watch next</span>—regardless if it's in theatres, on TV or available on popular streaming services like QubitTV, Kocowa, DIRECTV GO y DOCSVILLE.
                 </p>
             </div>
             <div>

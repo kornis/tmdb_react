@@ -6,11 +6,11 @@ class MoviesList extends React.Component{
         movies: null,
         loading: true,
     }
-
     fetchData = async() =>{
-        const response = await fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=a6f0d3082cd52617711adb2c75c57921&language=en-US&page=1")
+        const url = `https://api.themoviedb.org/3/search/movie?query=${this.props.search}&api_key=a6f0d3082cd52617711adb2c75c57921&language=en-US&page=1&include_adult=false`;
+        const response = await fetch(url);
         const data = await response.json();
-        console.log(data.results);
+        console.log(data);
         this.setState({movies:data, loading:false})
     }
 

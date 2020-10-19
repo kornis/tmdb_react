@@ -6,10 +6,10 @@ class MovieItem extends React.Component {
         return(
             <div className="movie_item_data">
                 <div>
-                    <Link to='/movie-detail/:id'><img src={ "https://image.tmdb.org/t/p/original" + this.props.data.poster_path } alt="Poster Movie" /></Link>
+                    <Link to={`/movie-detail/${this.props.data.id}`}><img src={ "https://image.tmdb.org/t/p/original" + this.props.data.poster_path } alt="Poster Movie" /></Link>
                 </div>
                 <div>
-                    <p><Link to='/movie-detail'><strong>Title:</strong> {this.props.data.title}</Link></p>
+                    <p><Link to={`/movie-detail/${this.props.data.id}`}><strong>Title:</strong> {this.props.data.title}</Link></p>
                     <p><strong>Overview:</strong> {(this.props.data.overview).substring(0,100) + "..."}</p>
                     <p><strong>Year:</strong> {this.props.data.release_date}</p>
                     <p><strong>Rating:</strong>{this.props.data.vote_average}</p>

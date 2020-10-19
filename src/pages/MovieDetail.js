@@ -14,11 +14,10 @@ class MovieDetailPage extends React.Component{
     }
 
     fetchMovieData = async () =>{
-       const response = await fetch('https://api.themoviedb.org/3/movie/1374?api_key=a6f0d3082cd52617711adb2c75c57921&language=en-US');
+       const response = await fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.movieId}?api_key=a6f0d3082cd52617711adb2c75c57921&language=en-US`);
        const data = await response.json();
-       const response2 = await fetch('https://api.themoviedb.org/3/movie/1374/credits?api_key=a6f0d3082cd52617711adb2c75c57921');
+       const response2 = await fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.movieId}/credits?api_key=a6f0d3082cd52617711adb2c75c57921`);
        const credits = await response2.json();
-       console.log(data);
        this.setState({
            movieData: data,
            credits,
