@@ -3,13 +3,24 @@ import '../components/home.css';
 import '../components/card_category.css';
 import { Redirect } from 'react-router-dom';
 import HomeCards from '../components/HomeCards';
+import HomeCategory from '../components/HomeCategory';
+
 
 class Home extends React.Component{
     state = {
         info: {
-            popular: null,
-            free_movie: null,
-            trending: null,
+            popular: {
+                title: "Lo mas popular",
+                data: null
+            },
+            free_movie: {
+                title: "Ver gratis",
+                data: null
+            },
+            trending: {
+                title: "Tendencias",
+                data: null
+            },
            },
         error: null,
         loading: true,
@@ -30,12 +41,15 @@ class Home extends React.Component{
         let response = await fetch(' https://api.themoviedb.org/3/movie/popular?api_key=a6f0d3082cd52617711adb2c75c57921&language=en-US&page=1');
         let data = await response.json();
         await this.setState({
+            ...this.state,
             info: {
-                popular: data,
+                popular: {
+                    data
+                }
             },
             loading: false
         });
-        console.log(this.state.info.popular.results);
+        console.log(this.state.info.popular.data.results);
     }
 
     componentDidMount(){
@@ -63,22 +77,9 @@ render(){
 
         <main>
             <section>
-                <article className="article_category">
-                    <div>
-                        <h3>Lo más popular</h3>
-                        <select>
-                            <option>En streaming</option>
-                            <option>En televisión</option>
-                            <option>En alquiler</option>
-                            <option>En cines</option>
-                        </select>
-                    </div>
-                    <div className="category_article">
-                    {this.state.loading ? null : this.state.info.popular.results.map(movie => {
-                    return (<HomeCards data={ movie } key={movie.id}/>);
-                })}
-                </div>
-                </article>
+
+                {this.state.loading ?  null : <HomeCategory data={ this.state.info.popular } />}
+    
             </section>
 
         <section>
